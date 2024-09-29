@@ -283,13 +283,12 @@
                         <div class="contact-input">
                             <h5>TELL US ABOUT YOUR MESSAGE</h5>
                             <h2>How Can We Help You?</h2>
-                            <form action="https://formsubmit.co/izuminihongo4@email.com" method="POST">
-                                <input type="text" name="name" required placeholder="Name">
-                                <input type="email" name="email" required placeholder="Email">
-                                <input type="text" name="subject" required placeholder="Subject">
-                                <textarea name="message" required placeholder="Message"></textarea>
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_template" value="table">
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="5e95bdb7-751c-4153-a606-8ec32658ec36">
+                                <input type="text" name="name" required>
+                                <input type="email" name="email" required>
+                                <input required type="tel" placeholder="Your Phone *" />
+                                
                             <select name="subject" required>
                                 <option value="Report Problem">Report Problem</option>
                                 <option value="Report Bug">Report Bug</option>
@@ -297,6 +296,7 @@
                                 <option value="Report Bug">Report Bug</option>
                                 <option value="Other">Other</option>
                             </select>
+                            <textarea name="message" required>message</textarea>
                         </div>
                         <div class="action-buttons">
                             <div class="ab-ml">
