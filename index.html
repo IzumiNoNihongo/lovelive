@@ -1,92 +1,322 @@
-<!doctype html>
+<!DOCTYPE html>
+</body>
+</html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <title>INN &middot; Contact</title>
+        <link rel="icon" href="./icon.jpg" />
         <link
-            href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
             rel="stylesheet"
         />
-        <title>Izumi</title>
-        <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            /* General Styles */
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+            header {
+                background-color: rgb(255, 113, 113);
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px;
+            }
+            .logo {
+                display: flex;
+                align-items: center;
+            }
+            .logo img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+            .logo h1 {
+                margin-left: 10px;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            /* Desktop Navigation */
+            nav ul {
+                list-style: none;
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+            nav ul li {
+                margin-left: 20px;
+            }
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                padding: 10px 15px;
+            }
+            nav ul li a:hover {
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 5px;
+            }
+
+            /* Hamburger Icon for Mobile */
+            .hamburger {
+                display: none;
+                font-size: 28px;
+                cursor: pointer;
+            }
+
+            /* Mobile Navigation */
+            .nav-bar-mobile {
+                display: none;
+                flex-direction: column;
+                background-color: rgb(255, 113, 113);
+                position: absolute;
+                top: 60px;
+                width: 100%;
+                left: 0;
+            }
+            .nav-bar-mobile a {
+                color: white;
+                padding: 15px;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                text-align: center;
+            }
+
+            .contact-container {
+                width: 100%;
+                height: 550px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .contact-container .contact {
+                color: white;
+                width: 95%;
+                height: 85%;
+                display: inline-flex;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow:
+                    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            }
+            .contact-container .contact div {
+                width: 50%;
+                height: 100%;
+            }
+            .contact-container .contact .contact-details {
+                background-color: rgb(89, 89, 225);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .contact-container .contact .contact-details div {
+                width: 85%;
+                height: 95%;
+            }
+            .contact-container .contact div div .contact-input {
+                width: 100%;
+                height: 85%;
+            }
+            .contact-container .contact div div div h5 {
+                word-spacing: 1px;
+                letter-spacing: 1px;
+                padding: 5px;
+                padding-left: 0;
+            }
+            .contact-container .contact div div div h2 {
+                word-spacing: 1px;
+                letter-spacing: 1px;
+            }
+            .contact-container .contact div div div input {
+                color: white;
+                font-family: "Poppins", sans-serif;
+                width: 100%;
+                display: block;
+                padding: 8px;
+                padding-left: 0;
+                margin-bottom: 10px;
+                background: none;
+                border: none;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+                outline: none;
+            }
+            .contact-container .contact div div input::placeholder {
+                color: rgba(255, 255, 255, 0.7);;
+                font-family: "Poppins", sans-serif;
+            }
+            .contact-container .contact div div input:focus {
+                border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+            }
+            .contact-container .contact div div label {
+                font-size: 14px;
+                margin-right: 10px;
+            }
+            .contact-container .contact div div select {
+                font-family: "Poppins", sans-serif;
+                border: none;
+                outline: none;
+                border-radius: 3px;
+                margin-top: 3px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            .contact-container .contact div div select option {
+                border: none;
+            }
+            .contact-container .contact div div .action-buttons {
+                width: 100%;
+                height: 15%;
+                display: inline-flex;
+            }
+            .contact-container .contact div div .action-buttons .ab-wa,
+            .contact-container .contact div div .action-buttons .ab-ml {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .contact-container .contact div div .action-buttons .ab-wa button,
+            .contact-container .contact div div .action-buttons .ab-ml button {
+                width: 70%;
+                height: 60%;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+            }
+            .contact-container .contact div div .action-buttons .ab-wa button {
+                background-color: #25D366;
+            }
+            .contact-container .contact div div .action-buttons .ab-ml button {
+                background-color: orange;
+            }
+
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                nav ul {
+                    display: none;
+                }
+                .hamburger {
+                    display: block;
+                }
+                .nav-bar-mobile.show {
+                    display: flex;
+                }
+                .contact-container {
+                    width: 100%;
+                    height: 720px;
+                }
+                .contact-container .contact {
+                    width: 90%;
+                    height: 90%;
+                    display: block;
+                }
+                .contact-container .contact div {
+                    width: 100%;
+                    height: 50%;
+                }
+                .contact-container .contact div div .action-buttons .ab-wa button,
+                .contact-container .contact div div .action-buttons .ab-ml button {
+                    width: 70%;
+                    height: 85%;
+                }
+            }
+        </style>
     </head>
     <body>
-        <nav>
-            <header>
-                <h1>アイドル</h1>
-            </header>
-            <ul>
-                <li><a id="home" href="https://takanenonadeshiko.jp/">ホーム</a></li> 
-                <li><a id="about" href="https://takanenonadeshiko.jp/">About Us</a></li> 
-                <li>Contact</li>
-                <li><a id="login" href="https://youtu.be/0_duRYVJhrg?si=2aIymYPwWN28Tic3">Login</a></li>  
-            </ul>
-        </nav>
-        <div class="container">
-        <div class="aidol-card"style="border-color: #ff7700;" >
-            <img src="foto/Honoka.png">
-            <div class="border">
-                <p style=" background-color: rgb(255, 199, 116) ">Honoka adalah pemimpin sekaligus. Pencipta Grup sekolah aidol U's</p>
-                <Button type="button">開ける</Button>
+        <header>
+            <div class="logo">
+                <img src="./icon.jpg" />
+                <h1>INN</h1>
             </div>
-        </div>
-        <div class="aidol-card"style="border-color: rgb(87, 255, 65);">
-            <img src="foto/kotori.png"  >
-            <div class="border">
-                <p style="background-color: rgb(154, 255, 65)">Kotori adalah teman masa kecil Honoka, sekaligus pemiliki sekolah otona dan menjadi anggota u's</p>
-            </div>
-        </div>
-        <div class="aidol-card"style="border-color: rgb(0, 110, 255) " >
-            <img src="foto/umi.png">
-            <div class="border">
-                <p style=" background-color: rgb(0, 110, 255) ">Umi sama seperti kotori dia adalah teman masakecil honoka. dia adalah seorang yang pemalu,tetapi memiliki tingkat disiplin yang tinggi. berkat dia juga U's bisa melangkah lebih jauh.</p>
-            </div>
-        </div>
-        <div class="aidol-card"style="border-color: #fbff00;">
-            <img src="foto/rin.JPG"  >
-            <div class="border">
-                <p style="background-color: rgb(252, 255, 65)">Kotori adalah teman masa kecil Honoka, sekaligus pemiliki sekolah otona dan menjadi anggota u's</p>
-            </div>
-        </div>
-        <div class="aidol-card"style="border-color: #ff7700;" >
-            <img src="foto/eri.png">
-            <div class="border">
-                <p style=" background-color: rgb(255, 199, 116) ">Honoka adalah pemimpin sekaligus. Pencipta Grup sekolah aidol U's</p>
-            </div>
-        </div>
-        <div class="aidol-card"style="border-color:rgb(208, 0, 255);">
-            <img src="foto/nozomi.png"  >
-            <div class="border">
-                <p style=" background-color: rgb(208, 0, 255) ">Kotori adalah teman masa kecil Honoka, sekaligus pemiliki sekolah otona dan menjadi anggota u's</p>
-            </div>
-        </div>
-        <div class="aidol-card"style=" border-color:rgb(252, 65, 255);">
-            <img src="foto/nico.png"  >
-            <div class="border">
-                <p style="background-color: rgb(252, 65, 255)">Kotori adalah teman masa kecil Honoka, sekaligus pemiliki sekolah otona dan menjadi anggota u's</p>
-            </div>
-        </div>
-        <div class="aidol-card"style="border-color: rgb(41, 163, 79);" >
-            <img src="foto/hanayo.png">
-            <div class="border">
-                <p style=" background-color: rgb(41, 163, 79) ">Honoka adalah pemimpin sekaligus. Pencipta Grup sekolah aidol U's</p>
-            </div>
-        </div>
-        <div class="aidol-card"style="border-color: rgb(255, 0, 0);">
-            <img src="foto/maki.png"  >
-            <div class="border">
-                <p style=" background-color: rgb(255, 0, 0) ">Kotori adalah teman masa kecil Honoka, sekaligus pemiliki sekolah otona dan menjadi anggota u's</p>
-            </div>
-        </div>
-        
-        </div> 
-        <footer>
-            <p>Copyright &copy; 2023  <a href="https://youtu.be/0_duRYVJhrg?si=2aIymYPwWN28Tic3">contact</a></p>
-        </footer>
+            <nav>
+                <ul class="nav-bar">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">About</a></li>
+                    <li>
+                        <select name="language" id="language">
+                            <option value="id">ID</option>
+                            <option value="en">EN</option>
+                            <option value="jp">JP</option>
+                        </select>
+                    </li>
+                </ul>
+                <span class="hamburger" id="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </nav>
+        </header>
 
-        <script src="js/script.js"></script>
-        
+        <div class="nav-bar-mobile" id="mobile-menu">
+            <a href="#">Home</a>
+            <a href="#">Library</a>
+            <a href="#">About</a>
+            <select name="language" id="language-mobile" style="margin: 10px">
+                <option value="id">ID</option>
+                <option value="en">EN</option>
+                <option value="jp">JP</option>
+            </select>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact">
+                <div class="contact-details">
+                    <div>
+                        <div class="contact-input">
+                            <h5>TELL US ABOUT YOUR MESSAGE</h5>
+                            <h2>How Can We Help You?</h2>
+                            <form action="https://formsubmit.co/izuminihongo4@email.com" method="POST">
+                                <input type="text" name="name" required placeholder="Name">
+                                <input type="email" name="email" required placeholder="Email">
+                                <input type="text" name="subject" required placeholder="Subject">
+                                <textarea name="message" required placeholder="Message"></textarea>
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                            <select name="subject" required>
+                                <option value="Report Problem">Report Problem</option>
+                                <option value="Report Bug">Report Bug</option>
+                                <option value="Report Feature">Request Feature</option>
+                                <option value="Report Bug">Report Bug</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="action-buttons">
+                            <div class="ab-ml">
+                                <button type="submit">Email</button>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-options"></div>
+            </div>
+        </div>
+
+        <script>
+            document
+                .getElementById('hamburger-menu')
+                .addEventListener('click', function () {
+                    var mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.toggle('show');
+                });
+        </script>
     </body>
 </html>
